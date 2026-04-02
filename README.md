@@ -53,7 +53,7 @@ YOLO_vs_SSD_RealTime_Detection_Benchmark/
 
 1. Cloner le projet :
 ```bash
-git clone https://github.com/votre-username/YOLO_vs_SSD_RealTime_Detection_Benchmark.git
+git clone https://github.com/AbdelouahadOudraia/comparaison-yolo-ssd.git
 cd YOLO_vs_SSD_RealTime_Detection_Benchmark
 ```
 
