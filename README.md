@@ -1,44 +1,51 @@
-# Comparaison YOLO vs SSD
+# YOLO vs SSD Real-Time Detection Benchmark
 
 ## Description
-Ce projet consiste à comparer et optimiser deux modèles de détection d’objets populaires : YOLO (You Only Look Once) et SSD (Single Shot Detector).
+Ce projet propose une comparaison des modèles de détection d’objets YOLO et SSD dans un contexte de détection en temps réel.
 
 L’évaluation est basée sur :
 - mAP (Mean Average Precision) : précision des détections  
 - FPS (Frames Per Second) : performance en temps réel  
 
-L’objectif est d’analyser le compromis entre précision et vitesse pour des applications réelles.
+L’objectif est d’analyser le compromis entre précision et vitesse pour des applications pratiques.
 
 ---
 
 ## Objectifs
-- Comparer les performances de YOLO et SSD  
-- Évaluer la précision des modèles (mAP)  
-- Mesurer la vitesse d’inférence (FPS)  
-- Tester les modèles sur images et vidéos  
-- Optimiser les performances pour le temps réel (≥ 30 FPS)  
+- Comparer YOLOv8 (nano et small) avec SSD MobileNetV2  
+- Évaluer la précision et la rapidité des modèles  
+- Tester les modèles sur des vidéos réelles  
+- Visualiser les résultats de détection  
+- Analyser les performances globales  
+
+---
+
+## Structure du projet
+```
+YOLO_vs_SSD_RealTime_Detection_Benchmark/
+│
+├── notebook/
+│   └── YOLO_vs_SSD_Benchmark.ipynb
+│
+├── outputs/
+│   ├── output_YOLOv8n.mp4
+│   ├── output_YOLOv8s.mp4
+│   ├── output_SSD_MobileNetV2.mp4
+│   ├── yolo_ssd_comparison.png
+│   └── benchmark_results.csv
+│
+└── README.md
+```
 
 ---
 
 ## Technologies utilisées
 - Python  
 - PyTorch  
-- Ultralytics YOLO  
+- Ultralytics YOLOv8  
 - OpenCV  
 - NumPy  
 - Matplotlib  
-
----
-
-## Structure du projet
-```
-comparaison-yolo-ssd/
-│
-├── YOLO_vs_SSD_Benchmark_mAP_FPS.ipynb
-├── README.md
-├── requirements.txt
-└── results/
-```
 
 ---
 
@@ -46,8 +53,8 @@ comparaison-yolo-ssd/
 
 1. Cloner le projet :
 ```bash
-git clone https://github.com/votre-username/comparaison-yolo-ssd.git
-cd comparaison-yolo-ssd
+git clone https://github.com/votre-username/YOLO_vs_SSD_RealTime_Detection_Benchmark.git
+cd YOLO_vs_SSD_RealTime_Detection_Benchmark
 ```
 
 2. Installer les dépendances :
@@ -64,31 +71,37 @@ Lancer le notebook :
 jupyter notebook
 ```
 
-Puis exécuter les cellules pour :
+Puis ouvrir :
+```
+notebook/YOLO_vs_SSD_Benchmark.ipynb
+```
+
+Exécuter les cellules pour :
 - Charger les modèles  
-- Tester sur images/vidéos  
-- Comparer les résultats  
+- Lancer la détection sur vidéo  
+- Générer les résultats  
 
 ---
 
 ## Résultats
 
-| Modèle | Précision (mAP) | Vitesse (FPS) |
-|--------|----------------|--------------|
-| YOLO   | Élevée         | Rapide       |
-| SSD    | Moyenne        | Très rapide  |
+Les résultats sont disponibles dans le dossier `outputs/` :
+- Vidéos de détection pour chaque modèle  
+- Graphique de comparaison (yolo_ssd_comparison.png)  
+- Fichier CSV contenant les métriques (benchmark_results.csv)  
 
-Conclusion :
-- YOLO offre un meilleur compromis entre précision et vitesse  
-- SSD est plus léger mais moins précis  
+Analyse :
+- YOLOv8 offre une meilleure précision  
+- SSD MobileNetV2 est plus léger et rapide  
+- YOLOv8s est plus précis que YOLOv8n mais légèrement plus lent  
 
 ---
 
 ## Applications
 - Vidéosurveillance  
+- Systèmes embarqués  
 - Voitures autonomes  
-- Détection d’objets en temps réel  
-- Sécurité intelligente  
+- Analyse vidéo en temps réel  
 
 ---
 
@@ -98,12 +111,12 @@ Abdelouahad Oudraia
 ---
 
 ## Améliorations futures
-- Ajout de nouveaux modèles (YOLOv8, Faster R-CNN)  
-- Optimisation GPU  
-- Déploiement en application web (Flask)  
+- Ajout d'autres modèles (Faster R-CNN, YOLOv9)  
+- Optimisation pour GPU et edge devices  
+- Déploiement en application web  
 - Ajout d’une interface utilisateur  
 
 ---
 
 ## Remarque
-Ce projet est réalisé dans un cadre d’apprentissage en vision par ordinateur et deep learning.
+Ce projet s’inscrit dans un cadre d’apprentissage en vision par ordinateur et deep learning, avec un focus sur les performances en temps réel.
